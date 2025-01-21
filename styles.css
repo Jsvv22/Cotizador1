@@ -10,6 +10,8 @@ select {
     padding: 8px;
     margin: 10px;
     font-size: 16px;
+    border-radius: 20px; /* Bordes redondeados */
+    overflow: hidden; /* Asegura que los bordes redondeados no se vean afectados por el contenido */
 }
 
 h1 {
