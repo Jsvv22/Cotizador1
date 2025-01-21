@@ -1,42 +1,48 @@
-const apiUrl = "https://script.google.com/macros/s/AKfycbw4pEkj-9nsQX7iRdWwr3WvSknaE8qru3HTpw7WHs5FPfo2ioOuKQcvKle_XYFfGnm6yg/exec";  // Reemplázala con tu URL de Google Apps Script
+ const apiUrl = "https://script.google.com/macros/s/AKfycbw4pEkj-9nsQX7iRdWwr3WvSknaE8qru3HTpw7WHs5FPfo2ioOuKQcvKle_XYFfGnm6yg/exec";
 
-document.addEventListener("DOMContentLoaded", async () => {
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
+        async function cargarDatos() {
+            let response = await fetch(apiUrl);
+            let data = await response.json();
 
-        const claseSelect = document.getElementById("clase");
-        const valorSelect = document.getElementById("valor");
-        const primaSpan = document.getElementById("prima");
+            const selectClase = document.getElementById("clase");
+            const selectValor = document.getElementById("valor");
 
-        // Llenar el dropdown de Clases
-        data.clases.forEach(item => {
-            let option = document.createElement("option");
-            option.value = item.clase;
-            option.textContent = item.clase;
-            claseSelect.appendChild(option);
-        });
+            // Cargar opciones de clases
+            data.clases.forEach(item => {
+                let option = new Option(item.clase, item.clase);
+                selectClase.add(option);
+            });
 
-        // Llenar el dropdown de Valores Asegurados
-        data.valoresAsegurados.forEach(valor => {
-            let option = document.createElement("option");
-            option.value = valor;
-            option.textContent = valor;
-            valorSelect.appendChild(option);
-        });
+            // Cargar valores asegurados
+            data.valoresAsegurados.forEach(valor => {
+                let option = new Option(valor, valor);
+                selectValor.add(option);
+            });
 
-        // Evento para actualizar la Prima sin IVA
-        function actualizarPrima() {
-            let claseIndex = claseSelect.selectedIndex;
-            let valorIndex = valorSelect.selectedIndex;
-            if (claseIndex > -1 && valorIndex > -1) {
-                primaSpan.textContent = data.primas[valorIndex][claseIndex];
+            // Actualizar coberturas y calcular prima
+            selectClase.addEventListener("change", () => actualizarCotizacion(data));
+            selectValor.addEventListener("change", () => actualizarCotizacion(data));
+        }
+
+        function actualizarCotizacion(data) {
+            const claseSeleccionada = document.getElementById("clase").value;
+            const valorSeleccionado = document.getElementById("valor").value;
+            const coberturaTexto = data.clases.find(c => c.clase === claseSeleccionada)?.cobertura || "Sin cobertura";
+
+            document.getElementById("cobertura").innerText = coberturaTexto;
+
+            let claseIndex = data.clasesDisponibles.indexOf(claseSeleccionada);
+            let valorIndex = data.valoresAsegurados.indexOf(Number(valorSeleccionado));
+
+            if (claseIndex >= 0 && valorIndex >= 0) {
+                let primaSinIVA = data.primas[valorIndex][claseIndex];
+                let iva = primaSinIVA * 0.19;
+                let total = primaSinIVA + iva;
+
+                document.getElementById("prima").innerText = primaSinIVA.toLocaleString("es-CO");
+                document.getElementById("iva").innerText = iva.toLocaleString("es-CO");
+                document.getElementById("total").innerText = total.toLocaleString("es-CO");
             }
         }
 
-        claseSelect.addEventListener("change", actualizarPrima);
-        valorSelect.addEventListener("change", actualizarPrima);
-    } catch (error) {
-        console.error("Error obteniendo los datos:", error);
-    }
-});
+        cargarDatos();
