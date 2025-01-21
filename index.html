@@ -15,18 +15,36 @@
 <body>
 
     <div class="header">POLIZA RC PROFESIONALES DE LA SALUD</div>
+<table>
+    <tr>
+        <td>Clase</td>
+        <td>Coberturas</td>
+    </tr>
+    <tr>
+        <td id="clase"></td>
+        <td id="coberturas"></td>
+    </tr>
 
+</table>
     <label for="clase">Clase:</label>
     <select id="clase"></select>
 
     <label for="Cobertura">Clase:</label>
     <select id="Cobertura"></select>
+     <style>
+        body { font-family: Arial, sans-serif; }
+        select, input { margin: 10px; padding: 5px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        .header { background-color: green; color: white; padding: 10px; text-align: center; }
+    </style>
+</head>
+<body>
 
+    <div class="header">Valor asegurado por medico</div>
     <label for="valor">Valor Asegurado por Médico:</label>
     <select id="valor"></select>
 
-    <h3>Coberturas:</h3>
-    <p id="cobertura"></p>
 
     <table>
         <tr>
