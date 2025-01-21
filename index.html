@@ -24,6 +24,8 @@
             border-collapse: collapse;
             margin-top: 10px;
             margin-bottom: 25px;
+            border-radius: 10px; /* Bordes redondeados en la tabla */
+            overflow: hidden; /* Asegura que los bordes redondeados no se vean afectados por el contenido */
         }
 
         th,
@@ -46,8 +48,8 @@
     <div class="header">POLIZA RC PROFESIONALES DE LA SALUD</div>
     <table>
         <tr>
-            <td>Clase</td>
-            <td>Coberturas</td>
+            <th>Clase</th>
+            <th>Coberturas</th>
         </tr>
         <tr>
             <td id="clase"><select id="clase"></select></td>
@@ -62,13 +64,17 @@
         <tr>
             <th>Prima sin IVA</th>
             <th>IVA</th>
-            <th>Valor Total Póliza Anual</th>
         </tr>
         <tr>
             <td id="prima"></td>
             <td id="iva"></td>
-            <td id="total"></td>
         </tr>
+    </table>
+    <table>
+        <tr>
+            <th>Valor Total Póliza Anual</th>
+        </tr>
+        <td id="totla"></td>
     </table>
 
     <div class="header">Definiciones y exclusiones</div>
