@@ -1,50 +1,60 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cotizador de Póliza RC</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        select, input { margin: 10px; padding: 5px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
-        .header { background-color: green; color: white; padding: 10px; text-align: center; }
+        /* Estilo general */
+        body {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 14px;
+        }
+
+        select,
+        input {
+            margin: 10px;
+            padding: 5px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .header {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
     </style>
 </head>
-<body>
 
+<body>
     <div class="header">POLIZA RC PROFESIONALES DE LA SALUD</div>
-<table>
-    <tr>
-        <td>Clase</td>
-        <td>Coberturas</td>
-    </tr>
-    <tr>
-        <td id="clase"></td>
-        <td id="coberturas"></td>
-    </tr>
+    <table>
+        <tr>
+            <td>Clase</td>
+            <td>Coberturas</td>
+        </tr>
+        <tr>
+            <td id="clase"></td>
+            <td id="coberturas"></td>
+        </tr>
+    </table>
 
-</table>
-    <label for="clase">Clase:</label>
-    <select id="clase"></select>
-
-    <label for="Cobertura">Clase:</label>
-    <select id="Cobertura"></select>
-     <style>
-        body { font-family: Arial, sans-serif; }
-        select, input { margin: 10px; padding: 5px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
-        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
-        .header { background-color: green; color: white; padding: 10px; text-align: center; }
-    </style>
-</head>
-<body>
-
-    <div class="header">Valor asegurado por medico</div>
-    <label for="valor">Valor Asegurado por Médico:</label>
+    <div class="header">Valor asegurado por médico</div>
     <select id="valor"></select>
-
 
     <table>
         <tr>
@@ -58,3 +68,15 @@
             <td id="total"></td>
         </tr>
     </table>
+
+    <div class="header">Definiciones y exclusiones</div>
+    <p>
+        1) Cirugía mayor: Incluye operaciones en o sobre cualquier cavidad corporal, incluyendo, pero no limitándose al cráneo, tórax, abdomen, o pelvis, o cualquier otra operación que, debido a la condición del paciente, o al tiempo, o a las circunstancias de la operación, presente un peligro marcado a la vida. También incluye remoción de cualquier glándula u órgano, remoción de tumores, amputaciones, fracturas de huesos, cirugía plástica y cualquier operación efectuada utilizando anestesia general. Serán también consideradas como cirugía mayor las cesáreas, las anexectomías y las amigdalectomías (tonsilectomías).
+        <br><br>
+        2) Cirugía Menor: Incluye las cirugías no clasificadas como Cirugía Mayor. También incluye: a) Procesos obstétricos no considerados como Cirugía Mayor, b) La asistencia a otros médicos en cirugías a pacientes propios. Biopsia por Punción: Incluye pulmones, hígado, riñones y próstata, pero no incluye médula ósea.
+        <br><br>
+        3) Caterización: No incluye a) Inserción ocasional y por emergencia de catéteres para registrar presión o marcapasos temporales, b) Caterización de la uretra, c) Caterización del cordón umbilical para propósitos de diagnóstico, o para monitorear gases en la sangre de recién nacidos que están recibiendo oxígeno.
+    </p>
+</body>
+
+</html>
