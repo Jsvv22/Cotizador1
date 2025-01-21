@@ -2,6 +2,8 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     margin-top: 50px;
+    border-radius: 20px; /* Bordes redondeados */
+    overflow: hidden; /* Asegura que los bordes redondeados no se vean afectados por el contenido */
 }
 
 select {
