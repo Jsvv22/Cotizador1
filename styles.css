@@ -1,46 +1,36 @@
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 14px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    margin-bottom: 25px;
+    border-radius: 10px;
+    overflow: hidden;
+    table-layout: fixed;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+    width: 50%;
+}
+
+.header {
+    background-color: green;
+    color: white;
+    padding: 10px;
     text-align: center;
-    margin-top: 50px;
-    border-radius: 20px; /* Bordes redondeados */
-    overflow: hidden; /* Asegura que los bordes redondeados no se vean afectados por el contenido */
 }
 
 select {
-    padding: 8px;
     margin: 10px;
-    font-size: 16px;
-    border-radius: 20px; /* Bordes redondeados */
-    overflow: hidden; /* Asegura que los bordes redondeados no se vean afectados por el contenido */
+    padding: 5px;
+    width: 700px;
+    border-radius: 10px;
+    overflow: hidden;
 }
-
-h1 {
-    font-size: 24px;
-}
-
-p {
-    font-size: 18px;
-    font-weight: bold;
-}
- table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 10px;
-            margin-bottom: 25px;
-            border-radius: 10px; /* Bordes redondeados en la tabla */
-            overflow: hidden; /* Asegura que los bordes redondeados no se vean afectados por el contenido */
-        }
-
-        th,
-        td {
-            padding: 10px;
-            border: 1px solid #ddd;
-            text-align: left;
-        }
-
-        .header {
-            background-color: green;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
