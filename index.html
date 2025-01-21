@@ -3,19 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cotizador de Seguros</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Cotizador de Póliza</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        select, input { margin: 10px; padding: 5px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; }
+        th, td { padding: 10px; border: 1px solid #ddd; text-align: left; }
+        .header { background-color: green; color: white; padding: 10px; text-align: center; }
+    </style>
 </head>
 <body>
-    <h1>Cotizador de Seguros</h1>
-    <label for="clase">Selecciona una clase:</label>
-    <select id="clase"></select>
-    
-    <label for="valor">Valor asegurado:</label>
-    <select id="valor"></select>
-    
-    <p>Prima sin IVA: <span id="prima"></span></p>
 
-    <script src="script.js"></script>
-</body>
-</html>
+    <div class="header">POLIZA RC PROFESIONALES DE LA SALUD</div>
+
+    <label for="clase">Clase:</label>
+    <select id="clase"></select>
+
+    <label for="valor">Valor Asegurado por Médico:</label>
+    <select id="valor"></select>
+
+    <h3>Coberturas:</h3>
+    <p id="cobertura"></p>
+
+    <table>
+        <tr>
+            <th>Prima sin IVA</th>
+            <th>IVA</th>
+            <th>Valor Total Póliza Anual</th>
+        </tr>
+        <tr>
+            <td id="prima"></td>
+            <td id="iva"></td>
+            <td id="total"></td>
+        </tr>
+    </table>
