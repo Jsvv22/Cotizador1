@@ -22,3 +22,25 @@ p {
     font-size: 18px;
     font-weight: bold;
 }
+ table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            margin-bottom: 25px;
+            border-radius: 10px; /* Bordes redondeados en la tabla */
+            overflow: hidden; /* Asegura que los bordes redondeados no se vean afectados por el contenido */
+        }
+
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+
+        .header {
+            background-color: green;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
