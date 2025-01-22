@@ -31,8 +31,6 @@ th, td {
 
 Selectclase, valor {
     width: 100%;
-    max-width: 300px; /* Limitar el tamaño máximo */
-    min-width: 150px; /* Limitar el tamaño mínimo */
     padding: 5px;
     font-size: 16px;
     box-sizing: border-box;  /* Para incluir padding dentro del ancho total */
@@ -41,6 +39,8 @@ Selectclase, valor {
     display: block;  /* Asegura que el selector se comporte como un bloque */
     margin-left: auto;  /* Centrado horizontal */
     margin-right: auto;  /* Centrado horizontal */
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 /* Hacer que el selector sea más accesible y con un buen espaciado */
