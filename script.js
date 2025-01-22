@@ -9,7 +9,7 @@ async function cargarDatos() {
         console.log("Clases cargadas:", clasesData);
         console.log("Valores asegurados cargados:", valoresData);
 
-        const selectClase = document.getElementById("clase");
+        const selectClase = document.getElementById("Selectclase");
         const selectValor = document.getElementById("valor");
 
         // Cargar clases en el selector
@@ -39,7 +39,7 @@ async function cargarDatos() {
 }
 
 function actualizarCotizacion(clasesData, valoresData) {
-    const claseSeleccionada = document.getElementById("clase").value;
+    const claseSeleccionada = document.getElementById("Selectclase").value;
     const valorSeleccionado = document.getElementById("valor").value;
 
     // Buscar la cobertura correspondiente a la clase seleccionada
