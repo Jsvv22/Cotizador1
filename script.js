@@ -1,28 +1,45 @@
 async function cargarDatos() {
-    const clasesResponse = await fetch("clases.json");
-    const valoresResponse = await fetch("valores.json");
+    try {
+        const clasesResponse = await fetch("clases.json");
+        const valoresResponse = await fetch("valores.json");
 
-    const clasesData = await clasesResponse.json();
-    const valoresData = await valoresResponse.json();
+        const clasesData = await clasesResponse.json();
+        const valoresData = await valoresResponse.json();
 
-    const selectClase = document.getElementById("clase");
-    const selectValor = document.getElementById("valor");
+        console.log("Clases cargadas:", clasesData);
+        console.log("Valores asegurados cargados:", valoresData);
 
-    // Cargar clases en el selector
-    clasesData.forEach(item => {
-        let option = new Option(item.clase, item.clase);
-        selectClase.add(option);
-    });
+        const selectClase = document.getElementById("clase");
+        const selectValor = document.getElementById("valor");
 
-    // Cargar valores asegurados
-    valoresData.valoresAsegurados.forEach(valor => {
-        let option = new Option(valor, valor);
-        selectValor.add(option);
-    });
+        // Limpiar selects
+        selectClase.innerHTML = '<option value="">Seleccione una clase</option>';
+        selectValor.innerHTML = '<option value="">Seleccione un valor</option>';
 
-    // Escuchar cambios
-    selectClase.addEventListener("change", () => actualizarCotizacion(clasesData, valoresData));
-    selectValor.addEventListener("change", () => actualizarCotizacion(clasesData, valoresData));
+        // Cargar clases en el selector
+        clasesData.forEach(item => {
+            let option = new Option(item.clase, item.clase);
+            selectClase.add(option);
+        });
+
+        // Cargar valores asegurados en el selector
+        valoresData.valoresAsegurados.forEach(valor => {
+            let option = new Option(valor, valor);
+            selectValor.add(option);
+        });
+
+        console.log("Opciones de clase agregadas:", selectClase.innerHTML);
+        console.log("Opciones de valores agregados:", selectValor.innerHTML);
+
+        // Escuchar cambios
+        selectClase.addEventListener("change", () => actualizarCotizacion(clasesData, valoresData));
+        selectValor.addEventListener("change", () => actualizarCotizacion(clasesData, valoresData));
+
+        // Actualizar la cotización inicial
+        actualizarCotizacion(clasesData, valoresData);
+    } catch (error) {
+        console.error("Error cargando los datos:", error);
+    }
 }
 
 function actualizarCotizacion(clasesData, valoresData) {
@@ -45,6 +62,9 @@ function actualizarCotizacion(clasesData, valoresData) {
         document.getElementById("prima").innerText = primaSinIVA.toLocaleString("es-CO");
         document.getElementById("iva").innerText = iva.toLocaleString("es-CO");
         document.getElementById("total").innerText = total.toLocaleString("es-CO");
+
+        console.log(`Clase seleccionada: ${claseSeleccionada}, Valor seleccionado: ${valorSeleccionado}`);
+        console.log(`Prima sin IVA: ${primaSinIVA}, IVA: ${iva}, Total: ${total}`);
     }
 }
 
