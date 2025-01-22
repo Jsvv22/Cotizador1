@@ -42,9 +42,3 @@ Selectclase, valor {
     margin-top: auto;
     margin-bottom: auto;
 }
-
-/* Hacer que el selector sea más accesible y con un buen espaciado */
-Selectclase:focus, valor:focus {
-    outline: none;
-    border-color: #4A90E2;  /* Cambiar color de borde al enfocar */
-}
