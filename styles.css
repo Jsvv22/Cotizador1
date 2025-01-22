@@ -30,9 +30,10 @@ th, td {
 }
 
 select {
+    width: 100%;
     margin: 10px;
     padding: 5px;
-    width: 700px;
+    box-sizing: border-box;
     border-radius: 10px;
     overflow: hidden;
 }
