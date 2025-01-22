@@ -83,7 +83,3 @@ function actualizarCotizacion(clasesData, valoresData) {
 
 // Cargar los datos al inicio
 cargarDatos();
-
-// Cargar los datos al inicio
-cargarDatos();
-
