@@ -33,17 +33,9 @@ async function cargarDatos() {
             selectValor.add(option);
         });
 
-        // Escuchar cambios
+        // Escuchar cambios en los selectores
         selectClase.addEventListener("change", () => actualizarCotizacion(clasesData, valoresData));
         selectValor.addEventListener("change", () => actualizarCotizacion(clasesData, valoresData));
-        
-            const claseEncontrada = clasesData.find(c => c.clase === claseSeleccionada);
-    if (claseEncontrada) {
-        coberturaTd.innerText = claseEncontrada.cobertura; // ✅ Se actualiza la cobertura
-    } else {
-        coberturaTd.innerText = "Sin cobertura";
-    }
-
 
         // Actualizar cobertura inicial si ya hay algo seleccionado
         actualizarCotizacion(clasesData, valoresData);
@@ -54,24 +46,29 @@ async function cargarDatos() {
 }
 
 function actualizarCotizacion(clasesData, valoresData) {
-    const claseSeleccionada = document.getElementById("Selectclase").value;
-    const valorSeleccionado = document.getElementById("valor").value;
+    const selectClase = document.getElementById("Selectclase");
+    const selectValor = document.getElementById("valor");
     const coberturaTd = document.getElementById("cobertura");
 
-    // Buscar la cobertura correspondiente a la clase seleccionada
+    const claseSeleccionada = selectClase.value; // Obtener la clase seleccionada
+    const valorSeleccionado = selectValor.value; // Obtener el valor seleccionado
+
+    // Buscar la clase correspondiente en clasesData
     const claseEncontrada = clasesData.find(c => c.clase === claseSeleccionada);
+
     if (claseEncontrada) {
-        coberturaTd.innerText = claseEncontrada.cobertura; // ✅ Se actualiza la cobertura
+        // Mostrar la cobertura de la clase seleccionada
+        coberturaTd.innerText = claseEncontrada.cobertura;
     } else {
         coberturaTd.innerText = "Sin cobertura";
     }
 
-    // Encontrar el índice de la clase y del valor asegurado
-    let claseIndex = valoresData.clases.indexOf(claseSeleccionada);
-    let valorIndex = valoresData.valoresAsegurados.indexOf(Number(valorSeleccionado));
+    // Buscar el índice de la clase y del valor seleccionado en valoresData
+    let claseIndex = valoresData.findIndex(item => item.clase === claseSeleccionada);
+    let valorIndex = valoresData.findIndex(item => item.valor === valorSeleccionado);
 
     if (claseIndex >= 0 && valorIndex >= 0) {
-        let primaSinIVA = valoresData.primas[valorIndex][claseIndex];
+        let primaSinIVA = valoresData[valorIndex][claseSeleccionada]; // Acceder a la prima según la clase
         let iva = primaSinIVA * 0.19;
         let total = primaSinIVA + iva;
 
@@ -83,6 +80,9 @@ function actualizarCotizacion(clasesData, valoresData) {
         console.log(`Prima sin IVA: ${primaSinIVA}, IVA: ${iva}, Total: ${total}`);
     }
 }
+
+// Cargar los datos al inicio
+cargarDatos();
 
 // Cargar los datos al inicio
 cargarDatos();
