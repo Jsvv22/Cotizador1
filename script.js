@@ -12,10 +12,6 @@ async function cargarDatos() {
         const selectClase = document.getElementById("clase");
         const selectValor = document.getElementById("valor");
 
-        // Limpiar selects
-        selectClase.innerHTML = '<option value="">Seleccione una clase</option>';
-        selectValor.innerHTML = '<option value="">Seleccione un valor</option>';
-
         // Cargar clases en el selector
         clasesData.forEach(item => {
             let option = new Option(item.clase, item.clase);
