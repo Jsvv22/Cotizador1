@@ -29,7 +29,7 @@ async function cargarDatos() {
 
         // Cargar valores asegurados en el selector
         valoresData.valoresAsegurados.forEach(valor => {
-            let option = new Option(valor, valor);
+            let option = new Option(item.valor, item.valor);
             selectValor.add(option);
         });
 
