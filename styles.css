@@ -29,7 +29,7 @@ th, td {
     text-align: center;
 }
 
-#Selectclase, #valor {
+Selectclase, valor {
     width: 100%;
     max-width: 300px; /* Limitar el tamaño máximo */
     min-width: 150px; /* Limitar el tamaño mínimo */
@@ -44,7 +44,7 @@ th, td {
 }
 
 /* Hacer que el selector sea más accesible y con un buen espaciado */
-#Selectclase:focus, #valor:focus {
+Selectclase:focus, valor:focus {
     outline: none;
     border-color: #4A90E2;  /* Cambiar color de borde al enfocar */
 }
