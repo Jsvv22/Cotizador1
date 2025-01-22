@@ -29,20 +29,22 @@ th, td {
     text-align: center;
 }
 
-Selectclase {
+#Selectclase, #valor {
     width: 100%;
-    margin: 10px;
+    max-width: 300px; /* Limitar el tamaño máximo */
+    min-width: 150px; /* Limitar el tamaño mínimo */
     padding: 5px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    overflow: hidden;
+    font-size: 16px;
+    box-sizing: border-box;  /* Para incluir padding dentro del ancho total */
+    border: 1px solid #ccc;  /* Añadir borde al selector */
+    border-radius: 10px;  /* Opcional: bordes redondeados */
+    display: block;  /* Asegura que el selector se comporte como un bloque */
+    margin-left: auto;  /* Centrado horizontal */
+    margin-right: auto;  /* Centrado horizontal */
 }
 
-select {
-    width: 100%;
-    margin: 10px;
-    padding: 5px;
-    box-sizing: border-box;
-    border-radius: 10px;
-    overflow: hidden;
+/* Hacer que el selector sea más accesible y con un buen espaciado */
+#Selectclase:focus, #valor:focus {
+    outline: none;
+    border-color: #4A90E2;  /* Cambiar color de borde al enfocar */
 }
