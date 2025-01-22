@@ -36,6 +36,14 @@ async function cargarDatos() {
         // Escuchar cambios
         selectClase.addEventListener("change", () => actualizarCotizacion(clasesData, valoresData));
         selectValor.addEventListener("change", () => actualizarCotizacion(clasesData, valoresData));
+        
+            const claseEncontrada = clasesData.find(c => c.clase === claseSeleccionada);
+    if (claseEncontrada) {
+        coberturaTd.innerText = claseEncontrada.cobertura; // ✅ Se actualiza la cobertura
+    } else {
+        coberturaTd.innerText = "Sin cobertura";
+    }
+
 
         // Actualizar cobertura inicial si ya hay algo seleccionado
         actualizarCotizacion(clasesData, valoresData);
