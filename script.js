@@ -31,7 +31,7 @@ function actualizarCotizacion(clasesData, valoresData) {
 
     // Buscar la cobertura correspondiente a la clase seleccionada
     const coberturaTexto = clasesData.find(c => c.clase === claseSeleccionada)?.cobertura || "Sin cobertura";
-    document.getElementById("coberturas").innerText = coberturaTexto;
+    document.getElementById("cobertura").innerText = coberturaTexto;
 
     // Encontrar el índice de la clase y del valor asegurado
     let claseIndex = valoresData.clases.indexOf(claseSeleccionada);
