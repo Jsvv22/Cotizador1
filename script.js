@@ -75,12 +75,9 @@ function actualizarCotizacion(clasesData, valoresData) {
         let iva = primaSinIVA * 0.19;
         let total = primaSinIVA + iva;
 
-        document.getElementById("prima").innerText = primaSinIVA.toLocaleString("es-CO");
-        document.getElementById("iva").innerText = iva.toLocaleString("es-CO");
-        document.getElementById("total").innerText = total.toLocaleString("es-CO");
-
-        console.log(`Clase seleccionada: ${claseSeleccionada}, Valor seleccionado: ${valorSeleccionado}`);
-        console.log(`Prima sin IVA: ${primaSinIVA}, IVA: ${iva}, Total: ${total}`);
+        document.getElementById("prima").innerText = prima.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+        document.getElementById("iva").innerText = iva.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+        document.getElementById("total").innerText = total.toLocaleString("es-CO", { style: "currency", currency: "COP" });
     }
 }
 
