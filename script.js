@@ -29,8 +29,11 @@ async function cargarDatos() {
 
         // Cargar valores asegurados en el selector
         valoresData.forEach(item => {
-            let option = new Option(item.Valor, item.Valor);
-            selectValor.add(option);
+           let valorNumerico = Number(item.valor.replace(/[^0-9]/g, "")); // Extraer solo números
+           let valorFormateado = valorNumerico.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+
+           let option = new Option(valorFormateado, valorNumerico); // Guardar valor numérico real en value
+           selectValor.add(option);
         });
 
         // Escuchar cambios en los selectores
