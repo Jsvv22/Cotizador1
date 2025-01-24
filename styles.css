@@ -167,7 +167,7 @@ select option {
     color: white; /* Texto blanco */
     text-align: center; /* Centrar el texto */
     padding: 10px 0; /* Espaciado arriba y abajo */
-    position: fixed; /* Fijar el pie de página en la parte inferior */
+    position: relative; /* Fijar el pie de página en la parte inferior */
     width: 100%; /* Ocupa todo el ancho de la ventana */
     bottom: 0; /* Asegura que esté pegado al borde inferior */
     left: 0; /* Alinea a la izquierda */
