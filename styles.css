@@ -65,6 +65,15 @@ th, td {
 .header-poliza img {
     width: 140px; /* Cambia según el tamaño original */
     height: auto;
+    margin-right: 20px;
+}
+
+.header-poliza span {
+    flex-grow: 1; /* texto ocupa espacio restante */
+    text-align: center;
+    color: whirw;
+    font-size: 20px;
+    font-weight: bold;
 }
 
 /* Agregar margen a los lados solo en escritorio */
