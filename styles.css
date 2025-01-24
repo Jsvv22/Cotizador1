@@ -6,13 +6,11 @@ html {
 }
 
 body {
-    width: 90%;
     font-family: "Arial", Times, serif;
     font-size: 14px;
     border-radius: 0; /* Asegúrate de que el body no tenga bordes redondeados */
     overflow-x: hidden;
     overflow-y: auto;
-    margin: 0; /* Elimina el margen del body */
 }
 
 div {
