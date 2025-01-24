@@ -205,6 +205,8 @@ select option {
     .footer {
         width: 100vw; /* Espaciado proporcional */
         font-size: 11px; /* Tamaño de fuente */
+        text-align: center; /* Centrar el texto */
+        line-height: 1.5;          /* Centrar el texto verticalmente */
     }
 }
 
