@@ -63,7 +63,7 @@ th, td {
 }
 
 .header-poliza {
-    width: 100%; /* Asegúrate de que ocupe todo el ancho */
+    width: 100vw; /* Asegúrate de que ocupe todo el ancho */
     height: 30px; /* Altura fija para el encabezado */
     border-radius: 0; /* Asegúrate de que no tenga bordes redondeados */
     background-color: green; /* Puedes cambiar el color de fondo */
@@ -169,7 +169,7 @@ select option {
     text-align: center; /* Centrar el texto */
     padding: 10px 0; /* Espaciado arriba y abajo */
     position: relative; /* Fijar el pie de página en la parte inferior */
-    width: 100%; /* Ocupa todo el ancho de la ventana */
+    width: 100vw; /* Ocupa todo el ancho de la ventana */
     border-radius: 0; /* Asegúrate de que no tenga bordes redondeados */
     bottom: 0; /* Asegura que esté pegado al borde inferior */
     left: 0; /* Alinea a la izquierda */
