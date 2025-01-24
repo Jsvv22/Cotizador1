@@ -206,7 +206,7 @@ select option {
 
 .content-wrapper {
     max-width: 1200px;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
     padding: 0 7%;
     background-color: white;
