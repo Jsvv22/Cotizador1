@@ -46,7 +46,7 @@ th, td {
 }
 
 select {
-    width: 100%;               /* Asegura que el selector ocupe el 100% del ancho disponible */
+    width: 80%;               /* Asegura que el selector ocupe el 100% del ancho disponible */
     padding: 10px;             /* Añadir un padding mayor para mejorar la estética */
     font-size: 16px;           /* Tamaño de fuente adecuado */
     box-sizing: border-box;    /* Incluye padding en el ancho total */
@@ -67,7 +67,7 @@ Selectclase:focus, #valor:focus {
 
 /* Estilo específico para el selector con la clase .custom-width */
 select.custom-width {
-    width: 100%; /* Mantener el ancho actual antes de ser desplegado */
+    width: 60%; /* Mantener el ancho actual antes de ser desplegado */
 }
 
 /* Estilo específico para el selector con la clase .custom-width cuando está enfocado */
