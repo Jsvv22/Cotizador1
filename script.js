@@ -37,19 +37,16 @@ valoresData.forEach(item => {
 });
 
 
-        // Escuchar cambios en los selectores
-        selectClase.addEventListener("change", () => actualizarCotizacion(clasesData, valoresData));
-        selectValor.addEventListener("change", () => actualizarCotizacion(clasesData, valoresData));
-
-        // Actualizar cobertura inicial si ya hay algo seleccionado
-        actualizarCotizacion(clasesData, valoresData);
+    // Guardar los datos en el DOM para accederlos más tarde
+        selectClase.dataset.clasesData = JSON.stringify(clasesData);
+        selectValor.dataset.valoresData = JSON.stringify(valoresData);
 
     } catch (error) {
         console.error("Error cargando los datos:", error);
     }
 }
 
-function actualizarCotizacion(clasesData, valoresData) {
+function cotizar(clasesData, valoresData) {
     const selectClase = document.getElementById("Selectclase");
     const selectValor = document.getElementById("valor");
     const coberturaTd = document.getElementById("cobertura");
