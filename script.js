@@ -38,10 +38,10 @@ valoresData.forEach(item => {
 
 
         // Escuchar cambios en los selectores
-        selectClase.addEventListener("change", () => coberturas(clasesData, valoresData));
+        selectClase.addEventListener("change", () => coberturas(clasesData));
         
         // Actualizar cobertura inicial si ya hay algo seleccionado
-        cobertura(clasesData, valoresData);
+        coberturas(clasesData);
 
     } catch (error) {
         console.error("Error cargando los datos:", error);
@@ -49,8 +49,8 @@ valoresData.forEach(item => {
 }
 
 function coberturas(clasesData) {
-    const coberturTd = document.getElementById("cobertura");
-    const selectClase = document.getElementById("Selectclase");
+    const coberturTd = document.getElementById("Selectclase");
+    const selectClase = document.getElementById("cobertura");
     const claseSelecionada = selectClase.value;
 
     const claseEncontrada = clasesData.find(c => c.clase === claseSeleccionada);
@@ -61,6 +61,7 @@ function coberturas(clasesData) {
         coberturaTd.innerText = "Sin coberturas"
     }
 }
+
 function actualizarCotizacion(clasesData, valoresData) {
     const selectClase = document.getElementById("Selectclase");
     const selectValor = document.getElementById("valor");
