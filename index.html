@@ -7,14 +7,17 @@
     <title>Cotizador de Póliza RC</title>
     <link rel="stylesheet" href="styles.css">
 </head>
- <style>
+     <style>
         .header {
-            height: 100px; /* Alargar la franja al doble */
+            height: 50px; /* Altura original para las demás franjas */
+        }
+        .header-poliza {
+            height: 100px; /* Altura duplicada solo para esta franja */
             display: flex;
             align-items: center;
         }
 
-        .header img {
+        .header-poliza img {
             height: 80px; /* Ajustar la altura de la imagen */
             margin-right: 10px;
         }
@@ -22,8 +25,8 @@
 </head>
 
 <body>
-    <div class="header">
-        <img src="logoprevisora.png" alt="Imagen de RC Profecionales">
+    <div class="header header-poliza">
+        <img src="Cotizador1/logoprevisora" alt="Imagen de RC Profecionales">
         POLIZA RC PROFESIONALES DE LA SALUD
     </div>
    <table>
