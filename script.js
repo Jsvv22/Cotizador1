@@ -40,8 +40,6 @@ valoresData.forEach(item => {
         // Escuchar cambios en los selectores
         selectClase.addEventListener("change", () => coberturas(clasesData, valoresData));
 
-        // Actualizar cobertura inicial si ya hay algo seleccionado
-        coberturas(clasesData, valoresData);
 
     } catch (error) {
         console.error("Error cargando los datos:", error);
