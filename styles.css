@@ -54,7 +54,7 @@ th, td {
     gap: 10px;
     align-items: center;
     text-align: center;
-    position: fixed; /* Fijar en la parte superior */
+    position: absolute; /* Fijar en la parte superior */
     top: 0; /* Asegurar que esté pegado al borde superior */
     left: 0; /* Que inicie desde la izquierda */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar el encabezado */
@@ -69,7 +69,7 @@ th, td {
 }
 
 .header-poliza span {
-    text-align: center;
+    margin-left: auto;
     color: whirw;
     font-size: 20px;
     font-weight: bold;
