@@ -8,15 +8,16 @@ html {
 body {
     font-family: "Arial", Times, serif;
     font-size: 14px;
-    border-radius: 10px;
+    border-radius: 0; /* Asegúrate de que el body no tenga bordes redondeados */
     overflow-x: hidden;
     overflow-y: auto;
+    margin: 0; /* Elimina el margen del body */
 }
 
-Div {
+div {
     font-family: "Arial", Times, serif;
     font-size: 14px;
-    border-radius: 10px;
+    border-radius: 0; /* Asegúrate de que los divs no tengan bordes redondeados */
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -46,15 +47,15 @@ th, td {
     text-align: center;
 }
 
- .header-poliza {
-    width: 100vw; /* Ocupar todo el ancho de la ventana */
+.header-poliza {
+    width: 100%; /* Asegúrate de que ocupe todo el ancho */
     height: 30px; /* Altura fija para el encabezado */
-    border-radius: 0px;
+    border-radius: 0; /* Asegúrate de que no tenga bordes redondeados */
     background-color: green; /* Puedes cambiar el color de fondo */
     display: flex;
     gap: 10px;
     align-items: center;
-    position: relative; /* Fijar en la parte superior */
+    position: fixed; /* Fijar en la parte superior */
     top: 0; /* Asegurar que esté pegado al borde superior */
     left: 0; /* Que inicie desde la izquierda */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar el encabezado */
@@ -94,7 +95,6 @@ th, td {
     box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
 }
 
-
 /* Agregar margen a los lados solo en escritorio */
 @media screen and (min-width: 1024px) { 
     .content-wrapper {
@@ -102,6 +102,7 @@ th, td {
         margin-right: 100px;
     }
 }
+
 select {
     width: 80%;               /* Asegura que el selector ocupe el 100% del ancho disponible */
     padding: 10px;             /* Añadir un padding mayor para mejorar la estética */
@@ -117,7 +118,7 @@ select {
     line-height: 1.5;          /* Centrar el texto verticalmente */
 }
 
-Selectclase:focus, #valor:focus {
+select:focus, #valor:focus {
     border-color: #666;        /* Cambiar el color del borde cuando se hace focus */
     background-color: #fff;    /* Fondo blanco cuando el campo está seleccionado */
 }
@@ -167,12 +168,12 @@ select option {
     color: white; /* Texto blanco */
     text-align: center; /* Centrar el texto */
     padding: 10px 0; /* Espaciado arriba y abajo */
-    position: relative; /* Fijar el pie de página en la parte inferior */
+    position: fixed; /* Fijar el pie de página en la parte inferior */
     width: 100%; /* Ocupa todo el ancho de la ventana */
+    border-radius: 0; /* Asegúrate de que no tenga bordes redondeados */
     bottom: 0; /* Asegura que esté pegado al borde inferior */
     left: 0; /* Alinea a la izquierda */
     font-size: 14px; /* Tamaño de fuente */
     font-family: Arial, sans-serif; /* Familia de fuente */
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
 }
-
