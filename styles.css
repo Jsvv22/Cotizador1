@@ -203,3 +203,11 @@ select option {
         padding: 20px 5%; /* Espaciado proporcional */
     }
 }
+
+.content-wrapper {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+    padding: 0 7%;
+    background-color: white;
+}
