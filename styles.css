@@ -75,7 +75,6 @@ th, td {
     left: 0; /* Que inicie desde la izquierda */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar el encabezado */
     z-index: 1000; /* Para que siempre esté sobre otros elementos */
-    padding: 10px;
 }
 
 .header-poliza .logo {
