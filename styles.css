@@ -58,7 +58,6 @@ th, td {
     font-weight: bold; /* Pone el texto en negrilla */
     justify-content: center; /* Centra el contenido horizontalmente */
     text-align: center; /* Centrar el texto horizontalmente */
-}
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ejemplo de sombra */
 }
 
