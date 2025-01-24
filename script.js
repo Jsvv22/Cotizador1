@@ -30,9 +30,8 @@ async function cargarDatos() {
         // Cargar valores asegurados en el selector
 valoresData.forEach(item => {    
     let valorNumerico = Number(item.Valor); // Convertimos directamente porque ya está limpio
-    let valorFormateado = valorNumerico.toLocaleString("es-CO", { style: "currency", currency: "COP",
-    minimumFracionDigits: 0,
-    maximumFracionDigits: 0});
+    let valorFormateado = valorNumerico.toLocaleString("es-CO", { style: "currency", currency: "COP", minimumFractionDigits: 0,
+        maximumFractionDigits: 0});
     let option = new Option(valorFormateado, valorNumerico); // Mostramos formato moneda, pero guardamos el número real
     selectValor.add(option);
 });
@@ -74,9 +73,12 @@ function actualizarCotizacion(clasesData, valoresData) {
         let iva = primaSinIVA * 0.19;
         let total = primaSinIVA + iva;
 
-        document.getElementById("prima").innerText = primaSinIVA.toLocaleString("es-CO", { style: "currency", currency: "COP" });
-        document.getElementById("iva").innerText = iva.toLocaleString("es-CO", { style: "currency", currency: "COP" });
-        document.getElementById("total").innerText = total.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+        document.getElementById("prima").innerText = primaSinIVA.toLocaleString("es-CO", { style: "currency", currency: "COP",minimumFractionDigits: 0,
+        maximumFractionDigits: 0 });
+        document.getElementById("iva").innerText = iva.toLocaleString("es-CO", { style: "currency", currency: "COP",minimumFractionDigits: 0,
+        maximumFractionDigits: 0 });
+        document.getElementById("total").innerText = total.toLocaleString("es-CO", { style: "currency", currency: "COP",minimumFractionDigits: 0,
+        maximumFractionDigits: 0 });
     } else {
         document.getElementById("prima").innerText = "N/A";
         document.getElementById("iva").innerText = "N/A";
