@@ -42,7 +42,19 @@ th, td {
     background-color: green;
     color: white;
     padding: 10px;
+    height: 20px;
     text-align: center;
+}
+
+ .header-poliza {
+            height: 30px; /* Altura duplicada solo para esta franja */
+            display: flex;
+            align-items: center;
+}
+
+.header-poliza img {
+    width: 140px; /* Cambia según el tamaño original */
+    height: auto;
 }
 
 /* Agregar margen a los lados solo en escritorio */
@@ -103,3 +115,4 @@ select option {
 .btn-cotizar:hover {
     background-color: #218838; /* Color de fondo más oscuro al pasar el cursor */
 }
+
