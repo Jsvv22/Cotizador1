@@ -55,33 +55,31 @@ function actualizarCotizacion(clasesData, valoresData) {
     const selectValor = document.getElementById("valor");
     const coberturaTd = document.getElementById("cobertura");
 
-    const claseSeleccionada = selectClase.value; // Obtener la clase seleccionada
-    const valorSeleccionado = selectValor.value; // Obtener el valor seleccionado
+    const claseSeleccionada = selectClase.value;
+    const valorSeleccionado = selectValor.value;
 
-    // Buscar la clase correspondiente en clasesData
     const claseEncontrada = clasesData.find(c => c.clase === claseSeleccionada);
 
     if (claseEncontrada) {
-        // Mostrar la cobertura de la clase seleccionada
         coberturaTd.innerText = claseEncontrada.cobertura;
     } else {
         coberturaTd.innerText = "Sin cobertura";
     }
 
     // Buscar el índice de la clase y del valor seleccionado en valoresData
-    let claseIndex = valoresData.findIndex(item => item.clase === claseSeleccionada);
-    let valorIndex = valoresData.findIndex(item => item.valor === valorSeleccionado);
+    const valorEncontrado = valoresData.find(item => item.Valor == valorSeleccionado);
 
-    if (claseIndex >= 0 && valorIndex >= 0) {
-        let primaSinIVA = valoresData[valorIndex][claseSeleccionada]; // Acceder a la prima según la clase
+    if (valorEncontrado && valorEncontrado[claseSeleccionada]) {
+        let primaSinIVA = valorEncontrado[claseSeleccionada];
         let iva = primaSinIVA * 0.19;
         let total = primaSinIVA + iva;
 
-        document.getElementById("prima").innerText = prima.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+        document.getElementById("prima").innerText = primaSinIVA.toLocaleString("es-CO", { style: "currency", currency: "COP" });
         document.getElementById("iva").innerText = iva.toLocaleString("es-CO", { style: "currency", currency: "COP" });
         document.getElementById("total").innerText = total.toLocaleString("es-CO", { style: "currency", currency: "COP" });
+    } else {
+        document.getElementById("prima").innerText = "N/A";
+        document.getElementById("iva").innerText = "N/A";
+        document.getElementById("total").innerText = "N/A";
     }
 }
-
-// Cargar los datos al inicio
-cargarDatos();
