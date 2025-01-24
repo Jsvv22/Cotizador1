@@ -78,7 +78,7 @@ th, td {
 
 /* Estilo para el disclaimer */
 .disclaimer-wrapper {
-    margin-top: 30px; /* Para separar el disclaimer del encabezado */
+    margin-top: 60px; /* Para separar el disclaimer del encabezado */
     width: 100%;
     position: relative;
 }
