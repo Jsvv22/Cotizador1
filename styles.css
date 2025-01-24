@@ -179,7 +179,7 @@ select option {
 }
 
 /* Para pantallas pequeñas (móviles) */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1080px) {
     .header-poliza {
         flex-direction: column;
         height: 30px;
