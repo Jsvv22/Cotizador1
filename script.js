@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", function () {
+    cargarDatos();
+});
+
 async function cargarDatos() {
     try {
         const [clasesResponse, valoresResponse] = await Promise.all([
@@ -15,7 +19,6 @@ async function cargarDatos() {
         const selectValor = document.getElementById("valor");
         const coberturaTd = document.getElementById("cobertura");
 
-        // Verificar que los elementos existen
         if (!selectClase || !selectValor || !coberturaTd) {
             console.error("Faltan elementos en el DOM");
             return;
@@ -28,20 +31,20 @@ async function cargarDatos() {
         });
 
         // Cargar valores asegurados en el selector
-valoresData.forEach(item => {    
-    let valorNumerico = Number(item.Valor); // Convertimos directamente porque ya está limpio
-    let valorFormateado = valorNumerico.toLocaleString("es-CO", { style: "currency", currency: "COP", minimumFractionDigits: 0,
-        maximumFractionDigits: 0});
-    let option = new Option(valorFormateado, valorNumerico); // Mostramos formato moneda, pero guardamos el número real
-    selectValor.add(option);
-});
+        valoresData.forEach(item => {
+            let valorNumerico = Number(item.Valor); 
+            let valorFormateado = valorNumerico.toLocaleString("es-CO", {
+                style: "currency",
+                currency: "COP",
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 0
+            });
+            let option = new Option(valorFormateado, valorNumerico); 
+            selectValor.add(option);
+        });
 
-
-        // Escuchar cambios en los selectores
+        // Evento para mostrar cobertura cuando cambie la selección de clase
         selectClase.addEventListener("change", () => coberturas(clasesData));
-        
-        // Actualizar cobertura inicial si ya hay algo seleccionado
-        coberturas(clasesData);
 
     } catch (error) {
         console.error("Error cargando los datos:", error);
@@ -49,47 +52,64 @@ valoresData.forEach(item => {
 }
 
 function coberturas(clasesData) {
-    const coberturTd = document.getElementById("Selectclase");
-    const selectClase = document.getElementById("cobertura");
-    const claseSelecionada = selectClase.value;
+    const selectClase = document.getElementById("Selectclase");
+    const coberturaTd = document.getElementById("cobertura");
+    const claseSeleccionada = selectClase.value;
 
     const claseEncontrada = clasesData.find(c => c.clase === claseSeleccionada);
 
     if (claseEncontrada) {
         coberturaTd.innerText = claseEncontrada.cobertura;
-    } else { 
-        coberturaTd.innerText = "Sin coberturas"
+    } else {
+        coberturaTd.innerText = "Sin coberturas";
     }
 }
 
-function actualizarCotizacion(clasesData, valoresData) {
+function actualizarCotizacion() {
     const selectClase = document.getElementById("Selectclase");
     const selectValor = document.getElementById("valor");
 
     const claseSeleccionada = selectClase.value;
     const valorSeleccionado = selectValor.value;
 
-    const claseEncontrada = clasesData.find(c => c.clase === claseSeleccionada);
-
-
-    // Buscar el índice de la clase y del valor seleccionado en valoresData
-    const valorEncontrado = valoresData.find(item => item.Valor == valorSeleccionado);
-
-    if (valorEncontrado && valorEncontrado[claseSeleccionada]) {
-        let primaSinIVA = Number(valorEncontrado[claseSeleccionada]);
-        let iva = primaSinIVA * 0.19;
-        let total = primaSinIVA + iva;
-
-        document.getElementById("prima").innerText = primaSinIVA.toLocaleString("es-CO", { style: "currency", currency: "COP",minimumFractionDigits: 0,
-        maximumFractionDigits: 0 });
-        document.getElementById("iva").innerText = iva.toLocaleString("es-CO", { style: "currency", currency: "COP",minimumFractionDigits: 0,
-        maximumFractionDigits: 0 });
-        document.getElementById("total").innerText = total.toLocaleString("es-CO", { style: "currency", currency: "COP",minimumFractionDigits: 0,
-        maximumFractionDigits: 0 });
-    } else {
-        document.getElementById("prima").innerText = "N/A";
-        document.getElementById("iva").innerText = "N/A";
-        document.getElementById("total").innerText = "N/A";
+    if (!claseSeleccionada || !valorSeleccionado) {
+        console.error("Debe seleccionar una clase y un valor");
+        return;
     }
+
+    fetch("valores.json")
+        .then(response => response.json())
+        .then(valoresData => {
+            const valorEncontrado = valoresData.find(item => item.Valor == valorSeleccionado);
+
+            if (valorEncontrado && valorEncontrado[claseSeleccionada]) {
+                let primaSinIVA = Number(valorEncontrado[claseSeleccionada]);
+                let iva = primaSinIVA * 0.19;
+                let total = primaSinIVA + iva;
+
+                document.getElementById("prima").innerText = primaSinIVA.toLocaleString("es-CO", {
+                    style: "currency",
+                    currency: "COP",
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                });
+                document.getElementById("iva").innerText = iva.toLocaleString("es-CO", {
+                    style: "currency",
+                    currency: "COP",
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                });
+                document.getElementById("total").innerText = total.toLocaleString("es-CO", {
+                    style: "currency",
+                    currency: "COP",
+                    minimumFractionDigits: 0,
+                    maximumFractionDigits: 0
+                });
+            } else {
+                document.getElementById("prima").innerText = "N/A";
+                document.getElementById("iva").innerText = "N/A";
+                document.getElementById("total").innerText = "N/A";
+            }
+        })
+        .catch(error => console.error("Error cargando los valores:", error));
 }
-cargarDatos();
