@@ -70,7 +70,7 @@ function actualizarCotizacion(clasesData, valoresData) {
     const valorEncontrado = valoresData.find(item => item.Valor == valorSeleccionado);
 
     if (valorEncontrado && valorEncontrado[claseSeleccionada]) {
-        let primaSinIVA = valorEncontrado[claseSeleccionada];
+        let primaSinIVA = Number(valorEncontrado[claseSeleccionada]);
         let iva = primaSinIVA * 0.19;
         let total = primaSinIVA + iva;
 
