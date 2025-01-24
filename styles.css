@@ -13,6 +13,14 @@ body {
     overflow-y: auto;
 }
 
+Div {
+    font-family: "Arial", Times, serif;
+    font-size: 14px;
+    border-radius: 10px;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
