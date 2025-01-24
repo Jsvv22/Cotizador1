@@ -30,9 +30,9 @@ async function cargarDatos() {
         // Cargar valores asegurados en el selector
 valoresData.forEach(item => {    
     let valorNumerico = Number(item.Valor); // Convertimos directamente porque ya está limpio
-
-    let valorFormateado = valorNumerico.toLocaleString("es-CO", { style: "currency", currency: "COP" });
-
+    let valorFormateado = valorNumerico.toLocaleString("es-CO", { style: "currency", currency: "COP",
+    minimumFracionDigits: 0,
+    maximumFracionDigits: 0});
     let option = new Option(valorFormateado, valorNumerico); // Mostramos formato moneda, pero guardamos el número real
     selectValor.add(option);
 });
