@@ -184,7 +184,14 @@ select option {
         padding: 5%;
         text-align: center;
     }
-
+    
+.content-wrapper {
+    width: 90%;
+    max-width: 1200px; /* Ancho máximo en pantallas grandes */
+    margin: 0 auto; /* Centrar el contenido */
+    padding: 10%; /* Márgenes laterales por defecto */
+}
+    
     .header-poliza .logo {
         width: 80px; /* Tamaño más adecuado para móviles */
         heigth: auto;
@@ -203,10 +210,4 @@ select option {
     .footer {
         padding: 20px 5%; /* Espaciado proporcional */
     }
-}
-
-.content-wrapper {
-    max-width: 1200px; /* Ancho máximo en pantallas grandes */
-    margin: 0 auto; /* Centrar el contenido */
-    padding: 0 7%; /* Márgenes laterales por defecto */
 }
