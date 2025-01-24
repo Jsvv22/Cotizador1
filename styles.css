@@ -203,62 +203,6 @@ select option {
         padding: 20px 5%; /* Espaciado proporcional */
     }
 }
-
-/* Para pantallas medianas (tablets) */
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-    .header-poliza {
-        flex-direction: row;
-        height: 30px;
-        padding: 3%;
-    }
-
-    .header-poliza .logo {
-        width: 100px; /* Tamaño intermedio */
-        align-self: flex-start;
-    }
-
-    .header-poliza .header-text {
-        font-size: 16px;
-    }
-
-    .content-wrapper {
-        margin: 8%;
-    }
-
-    .footer {
-        padding: 15px 8%;
-    }
-}
-
-/* Para pantallas grandes (PC/TV) */
-@media screen and (min-width: 1024px) {
-    .content-wrapper {
-        max-width: 1200px;
-        margin: 10% auto; /* Centra el contenido */
-    }
-
-    .header-poliza {
-        padding: 2%;
-        width: 100%; /* Asegúrate de que ocupe todo el ancho */
-        height: 30px; /* Altura fija para el encabezado */
-        border-radius: 0; /* Asegúrate de que no tenga bordes redondeados */
-        background-color: green; /* Puedes cambiar el color de fondo */
-        display: flex;
-        gap: 10px;
-        align-items: center;
-        position: relative; /* Fijar en la parte superior */
-        top: 0; /* Asegurar que esté pegado al borde superior */
-        left: 0; /* Que inicie desde la izquierda */
-        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar el encabezado */
-        z-index: 1000; /* Para que siempre esté sobre otros elementos */
-        padding: 10px;
-
-    }
-
-    .header-poliza .logo {
-        width: 120px; /* Mantiene la proporción para pantallas grandes */
-    }
-
     .footer {
         padding: 10px 10%;
     }
