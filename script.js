@@ -48,15 +48,17 @@ valoresData.forEach(item => {
 
 function coberturas(clasesData) {
     const coberturTd = document.getElementById("cobertura");
+    const selectClase = document.getElementById("Selectclase");
     const claseSelecionada = selectClase.value;
 
-    const claseEncontrada = claseData.find(c => c.clase === claseSeleccionada);
+    const claseEncontrada = clasesData.find(c => c.clase === claseSeleccionada);
 
     if (claseEncontrada) {
         coberturaTd.innerText = claseEncontrada.cobertura;
     } else { 
         coberturaTd.innerText = "Sin coberturas"
-
+    }
+}
 function actualizarCotizacion(clasesData, valoresData) {
     const selectClase = document.getElementById("Selectclase");
     const selectValor = document.getElementById("valor");
