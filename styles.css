@@ -109,14 +109,6 @@ th, td {
     box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
 }
 
-/* Agregar margen a los lados solo en escritorio */
-@media screen and (min-width: 1024px) { 
-    .content-wrapper {
-        margin-left: 100px;
-        margin-right: 100px;
-    }
-}
-
 select {
     width: 80%;               /* Asegura que el selector ocupe el 100% del ancho disponible */
     padding: 10px;             /* Añadir un padding mayor para mejorar la estética */
@@ -169,14 +161,6 @@ select option {
     background-color: #218838; /* Color de fondo más oscuro al pasar el cursor */
 }
 
-@media screen and (max-width: 768px) {
-    .header-poliza span {
-        font-size: 14px; /* Ajusta el tamaño del texto según sea necesario */
-        overflow: hidden; /* Oculta el desbordamiento */
-        text-overflow: ellipsis; /* Muestra puntos suspensivos si el texto es demasiado largo */
-    }
-}
-
 .footer {
     background-color: #000000; /* Fondo oscuro */
     color: white; /* Texto blanco */
@@ -190,4 +174,58 @@ select option {
     font-size: 14px; /* Tamaño de fuente */
     font-family: Arial, sans-serif; /* Familia de fuente */
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+}
+
+/* Para pantallas pequeñas */
+@media screen and (max-width: 768px) {
+    .header-poliza {
+        flex-direction: column; /* Ajusta el diseño a columnas */
+        height: auto;
+        padding: 10px;
+    }
+
+    .header-poliza .logo {
+        width: 100px; /* Ajusta el tamaño de la logo */
+        margin-bottom: 10px;
+    }
+
+    .header-poliza .header-text {
+        font-size: 16px; /* Ajusta el tamaño del texto */
+    }
+
+    .footer {
+        padding: 20px 0; /* Mayor espaciado en pantallas pequeñas */
+    }
+}
+
+/* Para pantallas medianas */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .header-poliza {
+        flex-direction: row; /* Diseño en fila */
+        height: 50px;
+    }
+
+    .header-poliza .logo {
+        width: 120px; /* Tamaño intermedio */
+    }
+
+    .header-poliza .header-text {
+        font-size: 18px; /* Ajusta el tamaño del texto */
+    }
+
+    .footer {
+        padding: 15px 0; /* Ajusta el espaciado */
+    }
+}
+
+/* Para pantallas grandes */
+@media screen and (min-width: 1024px) {
+    .content-wrapper {
+        margin-left: 100px;
+        margin-right: 100px;
+    }
+
+    .footer {
+        padding: 10px 0; /* Espaciado estándar */
+    }
 }
