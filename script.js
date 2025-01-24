@@ -2,6 +2,12 @@ document.addEventListener("DOMContentLoaded", function () {
     cargarDatos();
 });
 
+function limpiarResultados() {
+    document.getElementById("prima").innerText = "";
+    document.getElementById("iva").innerText = "";
+    document.getElementById("total").innerText = "";
+}
+
 async function cargarDatos() {
     try {
         const [clasesResponse, valoresResponse] = await Promise.all([
@@ -45,10 +51,13 @@ async function cargarDatos() {
 
         // Evento para mostrar cobertura cuando cambie la selección de clase
         selectClase.addEventListener("change", () => coberturas(clasesData));
+        selectClase.addEventListener("change", limpiarResultados);
+        selectValor.addEventListener("change", limpiarResultados);
 
     } catch (error) {
         console.error("Error cargando los datos:", error);
     }
+
 }
 
 function coberturas(clasesData) {
