@@ -6,7 +6,6 @@ html {
 }
 
 body {
-    padding-top: 30px;
     font-family: "Arial", Times, serif;
     font-size: 14px;
     border-radius: 10px;
@@ -53,6 +52,7 @@ th, td {
     background-color: green; /* Puedes cambiar el color de fondo */
     display: flex;
     gap: 10px;
+    align-items: center;
     text-align: center;
     position: fixed; /* Fijar en la parte superior */
     top: 0; /* Asegurar que esté pegado al borde superior */
