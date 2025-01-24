@@ -203,7 +203,9 @@ select option {
         padding: 20px 5%; /* Espaciado proporcional */
     }
 }
-    .footer {
-        padding: 10px 10%;
-    }
+
+.content-warapper {
+    max-width: 1200px; /* Ancho máximo en pantallas grandes */
+    margin: 0 auto; /* Centrar el contenido */
+    padding: 0 7%; /* Márgenes laterales por defecto */
 }
