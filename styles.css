@@ -47,9 +47,19 @@ th, td {
 }
 
  .header-poliza {
-            height: 30px; /* Altura duplicada solo para esta franja */
-            display: flex;
-            align-items: center;
+    width: 100vw; /* Ocupar todo el ancho de la ventana */
+    height: 100px; /* Altura fija para el encabezado */
+    background-color: green; /* Puedes cambiar el color de fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+    position: fixed; /* Fijar en la parte superior */
+    top: 0; /* Asegurar que esté pegado al borde superior */
+    left: 0; /* Que inicie desde la izquierda */
+    z-index: 1000; /* Para que siempre esté sobre otros elementos */
+    padding: 10px;
 }
 
 .header-poliza img {
