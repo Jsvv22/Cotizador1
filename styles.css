@@ -46,15 +46,19 @@ th, td {
 }
 
 Selectclase, valor {
-    width: 100%;
-    padding: 5px;
-    font-size: 16px;
-    box-sizing: border-box;  /* Para incluir padding dentro del ancho total */
-    border: 1px solid #ccc;  /* Añadir borde al selector */
-    border-radius: 10px;  /* Opcional: bordes redondeados */
-    display: block;  /* Asegura que el selector se comporte como un bloque */
-    margin-left: auto;  /* Centrado horizontal */
-    margin-right: auto;  /* Centrado horizontal */
-    margin-top: auto;
-    margin-bottom: auto;
+    width: 100%;               /* Asegura que el selector ocupe el 100% del ancho disponible */
+    padding: 10px;             /* Añadir un padding mayor para mejorar la estética */
+    font-size: 16px;           /* Tamaño de fuente adecuado */
+    box-sizing: border-box;    /* Incluye padding en el ancho total */
+    border: 1px solid #888;    /* Bordes de color gris oscuro */
+    border-radius: 12px;       /* Bordes redondeados */
+    background-color: #f9f9f9; /* Fondo más suave para el selector */
+    display: block;            /* Asegura que se comporta como un bloque */
+    margin: 10px auto;         /* Centrado con margen superior e inferior */
+    transition: border-color 0.3s ease, background-color 0.3s ease; /* Efectos suaves para cambios de estilo */
+}
+
+Selectclase:focus, #valor:focus {
+    border-color: #666;        /* Cambiar el color del borde cuando se hace focus */
+    background-color: #fff;    /* Fondo blanco cuando el campo está seleccionado */
 }
