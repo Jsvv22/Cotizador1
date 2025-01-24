@@ -83,3 +83,4 @@ function actualizarCotizacion(clasesData, valoresData) {
         document.getElementById("total").innerText = "N/A";
     }
 }
+cargarDatos();
