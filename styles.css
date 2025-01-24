@@ -45,7 +45,7 @@ th, td {
     text-align: center;
 }
 
-Selectclase, valor {
+Selectclase, select, valor {
     width: 100%;               /* Asegura que el selector ocupe el 100% del ancho disponible */
     padding: 10px;             /* Añadir un padding mayor para mejorar la estética */
     font-size: 16px;           /* Tamaño de fuente adecuado */
