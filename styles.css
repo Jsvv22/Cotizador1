@@ -204,7 +204,7 @@ select option {
     }
 }
 
-.content-warapper {
+.content-wrapper {
     max-width: 1200px; /* Ancho máximo en pantallas grandes */
     margin: 0 auto; /* Centrar el contenido */
     padding: 0 7%; /* Márgenes laterales por defecto */
