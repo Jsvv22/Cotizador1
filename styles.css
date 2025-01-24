@@ -40,6 +40,9 @@ th, td {
 .header {
     background-color: green;
     color: white;
+    margin-left: calc(-1 * (100vw - 100%));
+    margin-right: calc(-1 * (100vw - 100%));
+    width: 100vw;
     padding: 10px;
     height: 20px;
     text-align: center;
@@ -163,6 +166,9 @@ select option {
 .footer {
     background-color: #000000; /* Fondo oscuro */
     color: white; /* Texto blanco */
+    margin-left: calc(-1 * (100vw - 100%));
+    margin-right: calc(-1 * (100vw - 100%));
+    width: 100vw;
     text-align: center; /* Centrar el texto */
     padding: 10px 0; /* Espaciado arriba y abajo */
     position: relative; /* Fijar el pie de página en la parte inferior */
