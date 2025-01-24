@@ -135,3 +135,19 @@ select option {
     background-color: #218838; /* Color de fondo más oscuro al pasar el cursor */
 }
 
+/* Estilo para el disclaimer */
+.disclaimer-wrapper {
+    margin-top: 30px; /* Para separar el disclaimer del encabezado */
+    width: 100%;
+    position: relative;
+}
+
+.disclaimer {
+    font-size: 10px; /* Tamaño pequeño para el texto */
+    color: #333; /* Un color suave para que no sea demasiado llamativo */
+    text-align: center;
+    padding: 20px;
+    background-color: #f4f4f4; /* Fondo suave para el disclaimer */
+    width: 100%; /* Asegura que ocupe todo el ancho */
+    box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+}
