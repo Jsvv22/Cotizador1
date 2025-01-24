@@ -17,7 +17,6 @@ body {
 div {
     font-family: "Arial", Times, serif;
     font-size: 14px;
-    border-radius: 0; /* Asegúrate de que los divs no tengan bordes redondeados */
     overflow-x: hidden;
     overflow-y: auto;
 }
@@ -45,6 +44,17 @@ th, td {
     padding: 10px;
     height: 20px;
     text-align: center;
+}
+
+.header-title {
+    background-color: green;
+    border-radius: 12px; /* Esquinas redondeadas de 12px */
+    /* Puedes agregar otras propiedades de estilo aquí */
+    padding: 10px; /* Ejemplo de espaciado interno */
+    color: white; /* Ejemplo de color de texto */
+    height: 20px;
+    text-align: center;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Ejemplo de sombra */
 }
 
 .header-poliza {
