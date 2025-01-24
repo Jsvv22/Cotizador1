@@ -65,6 +65,9 @@ Selectclase:focus, #valor:focus {
     background-color: #fff;    /* Fondo blanco cuando el campo está seleccionado */
 }
 
+valor:focus, { width: 300px
+}  
+
 /* Estilos para las opciones dentro del <select> */
 select option {
     text-align: center;        /* Centrar el texto horizontalmente */
