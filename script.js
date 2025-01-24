@@ -37,30 +37,37 @@ valoresData.forEach(item => {
 });
 
 
-    // Guardar los datos en el DOM para accederlos más tarde
-        selectClase.dataset.clasesData = JSON.stringify(clasesData);
-        selectValor.dataset.valoresData = JSON.stringify(valoresData);
+        // Escuchar cambios en los selectores
+        selectClase.addEventListener("change", () => coberturas(clasesData, valoresData));
+
+        // Actualizar cobertura inicial si ya hay algo seleccionado
+        coberturas(clasesData, valoresData);
 
     } catch (error) {
         console.error("Error cargando los datos:", error);
     }
 }
 
-function cotizar(clasesData, valoresData) {
+function coberturas(clasesData) {
+    const coberturTd = document.getElementById("cobertura");
+    const claseSelecionada = selectClase.value;
+
+    const claseEncontrada = claseData.find(c => c.clase === claseSeleccionada);
+
+    if (claseEncontrada) {
+        coberturaTd.innerText = claseEncontrada.cobertura;
+    } else { 
+        coberturaTd.innerText = "Sin coberturas"
+
+function actualizarCotizacion(clasesData, valoresData) {
     const selectClase = document.getElementById("Selectclase");
     const selectValor = document.getElementById("valor");
-    const coberturaTd = document.getElementById("cobertura");
 
     const claseSeleccionada = selectClase.value;
     const valorSeleccionado = selectValor.value;
 
     const claseEncontrada = clasesData.find(c => c.clase === claseSeleccionada);
 
-    if (claseEncontrada) {
-        coberturaTd.innerText = claseEncontrada.cobertura;
-    } else {
-        coberturaTd.innerText = "Sin cobertura";
-    }
 
     // Buscar el índice de la clase y del valor seleccionado en valoresData
     const valorEncontrado = valoresData.find(item => item.Valor == valorSeleccionado);
