@@ -49,6 +49,7 @@ th, td {
  .header-poliza {
     width: 100vw; /* Ocupar todo el ancho de la ventana */
     height: 30px; /* Altura fija para el encabezado */
+    border-radius: 0px;
     background-color: green; /* Puedes cambiar el color de fondo */
     display: flex;
     gap: 10px;
@@ -69,7 +70,7 @@ th, td {
 }
 
 .header-poliza span {
-    margin-left: center;
+    text-align: center;
     color: whirw;
     font-size: 20px;
     font-weight: bold;
