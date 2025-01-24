@@ -54,7 +54,6 @@ th, td {
     display: flex;
     gap: 10px;
     align-items: center;
-    text-align: center;
     position: relative; /* Fijar en la parte superior */
     top: 0; /* Asegurar que esté pegado al borde superior */
     left: 0; /* Que inicie desde la izquierda */
@@ -63,15 +62,17 @@ th, td {
     padding: 10px;
 }
 
-.header-poliza img {
+.header-poliza .logo {
     width: 140px; /* Cambia según el tamaño original */
     height: auto;
     margin-right: 0px;
 }
 
-.header-poliza span {
-    text-align: center;
-    color: whirw;
+.header-poliza .header-text {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white; /* Color blanco correcto */
     font-size: 20px;
     font-weight: bold;
 }
@@ -95,7 +96,7 @@ th, td {
 
 
 /* Agregar margen a los lados solo en escritorio */
-@media (min-width: 1024px) { 
+@media screen and (min-width: 1024px) { 
     .content-wrapper {
         margin-left: 100px;
         margin-right: 100px;
@@ -151,4 +152,12 @@ select option {
 /* Cambiar el color de fondo cuando el botón está en hover */
 .btn-cotizar:hover {
     background-color: #218838; /* Color de fondo más oscuro al pasar el cursor */
+}
+
+@media screen and (max-width: 768px) {
+    .header-poliza span {
+        font-size: 14px; /* Ajusta el tamaño del texto según sea necesario */
+        overflow: hidden; /* Oculta el desbordamiento */
+        text-overflow: ellipsis; /* Muestra puntos suspensivos si el texto es demasiado largo */
+    }
 }
