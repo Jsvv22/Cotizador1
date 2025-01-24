@@ -56,9 +56,16 @@ Selectclase, select, valor {
     display: block;            /* Asegura que se comporta como un bloque */
     margin: 10px auto;         /* Centrado con margen superior e inferior */
     transition: border-color 0.3s ease, background-color 0.3s ease; /* Efectos suaves para cambios de estilo */
+    text-align: center;        /* Centrar el texto horizontalmente */
+    line-height: 1.5;          /* Centrar el texto verticalmente */
 }
 
 Selectclase:focus, #valor:focus {
     border-color: #666;        /* Cambiar el color del borde cuando se hace focus */
     background-color: #fff;    /* Fondo blanco cuando el campo está seleccionado */
+}
+
+/* Estilos para las opciones dentro del <select> */
+select option {
+    text-align: center;        /* Centrar el texto horizontalmente */
 }
