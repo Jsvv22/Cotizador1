@@ -176,56 +176,76 @@ select option {
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
 }
 
-/* Para pantallas pequeñas */
+/* Para pantallas pequeñas (móviles) */
 @media screen and (max-width: 768px) {
     .header-poliza {
-        flex-direction: column; /* Ajusta el diseño a columnas */
+        flex-direction: column;
         height: auto;
-        padding: 10px;
+        padding: 5%;
+        text-align: center;
     }
 
     .header-poliza .logo {
-        width: 100px; /* Ajusta el tamaño de la logo */
+        width: 80px; /* Tamaño más adecuado para móviles */
         margin-bottom: 10px;
+        align-self: flex-start; /* Asegura que se alinee a la izquierda */
     }
 
     .header-poliza .header-text {
-        font-size: 16px; /* Ajusta el tamaño del texto */
+        font-size: 14px; /* Texto ligeramente más pequeño para móviles */
+    }
+
+    .content-wrapper {
+        margin: 5%;
     }
 
     .footer {
-        padding: 20px 0; /* Mayor espaciado en pantallas pequeñas */
+        padding: 20px 5%; /* Espaciado proporcional */
     }
 }
 
-/* Para pantallas medianas */
+/* Para pantallas medianas (tablets) */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .header-poliza {
-        flex-direction: row; /* Diseño en fila */
-        height: 50px;
+        flex-direction: row;
+        height: auto;
+        padding: 3%;
     }
 
     .header-poliza .logo {
-        width: 120px; /* Tamaño intermedio */
+        width: 100px; /* Tamaño intermedio */
+        align-self: flex-start;
     }
 
     .header-poliza .header-text {
-        font-size: 18px; /* Ajusta el tamaño del texto */
+        font-size: 16px;
+    }
+
+    .content-wrapper {
+        margin: 8%;
     }
 
     .footer {
-        padding: 15px 0; /* Ajusta el espaciado */
+        padding: 15px 8%;
     }
 }
 
-/* Para pantallas grandes */
+/* Para pantallas grandes (PC/TV) */
 @media screen and (min-width: 1024px) {
     .content-wrapper {
-        margin-left: 100px;
-        margin-right: 100px;
+        max-width: 1200px;
+        margin: 0 auto; /* Centra el contenido */
+    }
+
+    .header-poliza {
+        padding: 2%;
+    }
+
+    .header-poliza .logo {
+        width: 120px; /* Mantiene la proporción para pantallas grandes */
     }
 
     .footer {
-        padding: 10px 0; /* Espaciado estándar */
+        padding: 10px 10%;
     }
 }
