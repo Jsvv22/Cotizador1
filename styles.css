@@ -48,7 +48,7 @@ th, td {
 
  .header-poliza {
     width: 100vw; /* Ocupar todo el ancho de la ventana */
-    height: 100px; /* Altura fija para el encabezado */
+    height: 30px; /* Altura fija para el encabezado */
     background-color: green; /* Puedes cambiar el color de fondo */
     display: flex;
     justify-content: center;
@@ -69,7 +69,6 @@ th, td {
 }
 
 .header-poliza span {
-    flex-grow: 1; /* texto ocupa espacio restante */
     text-align: center;
     color: whirw;
     font-size: 20px;
