@@ -81,7 +81,7 @@ th, td {
         margin-left: 100px;
         margin-right: 100px;
     }
-
+}
 select {
     width: 80%;               /* Asegura que el selector ocupe el 100% del ancho disponible */
     padding: 10px;             /* Añadir un padding mayor para mejorar la estética */
