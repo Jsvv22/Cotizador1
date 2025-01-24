@@ -6,6 +6,7 @@ html {
 }
 
 body {
+    width: 90%;
     font-family: "Arial", Times, serif;
     font-size: 14px;
     border-radius: 0; /* Asegúrate de que el body no tenga bordes redondeados */
@@ -184,13 +185,6 @@ select option {
         padding: 5%;
         text-align: center;
     }
-    
-.content-wrapper {
-    width: 90%;
-    max-width: 1200px; /* Ancho máximo en pantallas grandes */
-    margin: 0 auto; /* Centrar el contenido */
-    padding: 10%; /* Márgenes laterales por defecto */
-}
     
     .header-poliza .logo {
         width: 80px; /* Tamaño más adecuado para móviles */
