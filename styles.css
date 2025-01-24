@@ -208,7 +208,7 @@ select option {
 @media screen and (min-width: 768px) and (max-width: 1024px) {
     .header-poliza {
         flex-direction: row;
-        height: auto;
+        height: 30px;
         padding: 3%;
     }
 
@@ -234,11 +234,25 @@ select option {
 @media screen and (min-width: 1024px) {
     .content-wrapper {
         max-width: 1200px;
-        margin: 0 auto; /* Centra el contenido */
+        margin: 10% auto; /* Centra el contenido */
     }
 
     .header-poliza {
         padding: 2%;
+        width: 100%; /* Asegúrate de que ocupe todo el ancho */
+        height: 30px; /* Altura fija para el encabezado */
+        border-radius: 0; /* Asegúrate de que no tenga bordes redondeados */
+        background-color: green; /* Puedes cambiar el color de fondo */
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        position: relative; /* Fijar en la parte superior */
+        top: 0; /* Asegurar que esté pegado al borde superior */
+        left: 0; /* Que inicie desde la izquierda */
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar el encabezado */
+        z-index: 1000; /* Para que siempre esté sobre otros elementos */
+        padding: 10px;
+
     }
 
     .header-poliza .logo {
