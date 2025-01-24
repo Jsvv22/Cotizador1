@@ -184,7 +184,7 @@ select option {
     .header-poliza {
         flex-direction: column;
         height: 30px;
-        padding: 5%;
+        padding: 0%;
         text-align: center;
     }
     
@@ -204,7 +204,7 @@ select option {
     }
 
     .footer {
-        padding: 20px 5%; /* Espaciado proporcional */
+        padding: 0%; /* Espaciado proporcional */
     }
 }
 
