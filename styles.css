@@ -65,11 +65,11 @@ th, td {
 .header-poliza img {
     width: 140px; /* Cambia según el tamaño original */
     height: auto;
-    margin-right: 5px;
+    margin-right: 0px;
 }
 
 .header-poliza span {
-    margin-left: auto;
+    margin-left: center;
     color: whirw;
     font-size: 20px;
     font-weight: bold;
