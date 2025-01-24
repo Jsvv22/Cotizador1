@@ -183,7 +183,7 @@ select option {
     .header-poliza {
         flex-direction: column;
         height: 30px;
-        padding: 0%;
+        width: 100vw;
         text-align: center;
     }
     
@@ -195,7 +195,7 @@ select option {
     }
 
     .header-poliza .header-text {
-        font-size: 14px; /* Texto ligeramente más pequeño para móviles */
+        font-size: 11px; /* Texto ligeramente más pequeño para móviles */
     }
 
     .content-wrapper {
@@ -203,7 +203,8 @@ select option {
     }
 
     .footer {
-        padding: 0%; /* Espaciado proporcional */
+        width: 100vw; /* Espaciado proporcional */
+        font-size: 11px; /* Tamaño de fuente */
     }
 }
 
