@@ -189,7 +189,7 @@ select option {
 @media screen and (max-width: 1080px) {
     .header-poliza {
         flex-direction: column;
-        height: 40px;
+        height: 37px;
         width: 100%;
         margin: 0;
         text-align: center;
