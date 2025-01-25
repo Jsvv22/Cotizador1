@@ -40,8 +40,7 @@ th, td {
 .header {
     background-color: green;
     color: white;
-    margin-left: 0;
-    margin-right: 0;
+    margin: 0;
     text-align: center;
 }
 
@@ -219,7 +218,7 @@ select option {
 .content-wrapper {
     max-width: 1200px;
     width: 100%;
-    margin: 0 auto;
+    margin: 0;
     padding: 0 7%;
     background-color: white;
 }
