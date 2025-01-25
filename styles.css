@@ -11,6 +11,8 @@ body {
     border-radius: 0; /* Asegúrate de que el body no tenga bordes redondeados */
     overflow-x: hidden;
     overflow-y: auto;
+    margin: 0;
+    padding: 0;
 }
 
 div {
@@ -18,6 +20,7 @@ div {
     font-size: 14px;
     overflow-x: hidden;
     overflow-y: auto;
+    margin: 1%;
 }
 
 table {
@@ -35,6 +38,13 @@ th, td {
     border: 1px solid #ddd;
     text-align: left;
     width: 50%;
+}
+
+.content-wrapper {
+    width: 100%;
+    margin: 5%;
+    padding: 7%;
+    background-color: white;
 }
 
 .header {
@@ -62,7 +72,7 @@ th, td {
 .header-poliza {
     margin: 0;
     width: 100%; /* Asegúrate de que ocupe todo el ancho */
-    height: 30px; /* Altura fija para el encabezado */
+    height: 55px; /* Altura fija para el encabezado */
     border-radius: 0; /* Asegúrate de que no tenga bordes redondeados */
     background-color: green; /* Puedes cambiar el color de fondo */
     display: flex;
@@ -92,7 +102,7 @@ th, td {
 
 /* Estilo para el disclaimer */
 .disclaimer-wrapper {
-    margin-top: 60px; /* Para separar el disclaimer del encabezado */
+    margin-top: 20px; /* Para separar el disclaimer del encabezado */
     width: 100%;
     position: relative;
 }
@@ -101,7 +111,7 @@ th, td {
     font-size: 10px; /* Tamaño pequeño para el texto */
     color: #333; /* Un color suave para que no sea demasiado llamativo */
     text-align: center;
-    padding: 20px;
+    padding: 1%;
     background-color: #f4f4f4; /* Fondo suave para el disclaimer */
     width: 100%; /* Asegura que ocupe todo el ancho */
     box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
@@ -163,7 +173,7 @@ select option {
     background-color: #000000; /* Fondo oscuro */
     margin: 0;
     color: white; /* Texto blanco */
-    margine:0;
+    margin:0;
     text-align: center; /* Centrar el texto */
     padding: 10px 0; /* Espaciado arriba y abajo */
     position: relative; /* Fijar el pie de página en la parte inferior */
@@ -179,7 +189,7 @@ select option {
 @media screen and (max-width: 1080px) {
     .header-poliza {
         flex-direction: column;
-        height: 25px;
+        height: 40px;
         width: 100%;
         margin: 0;
         text-align: center;
@@ -190,7 +200,7 @@ select option {
     
     .header-poliza .logo {
         width: 100px; /* Tamaño más adecuado para móviles */
-        heigth: auto;
+        height: auto;
         margin-bottom: 0px;
         align-self: flex-start; /* Asegura que se alinee a la izquierda */
     }
@@ -202,23 +212,20 @@ select option {
         flex-grow: 1;
     }
 
-    .content-wrapper {
-        margin: 5%;
+    div {
+        font-family: "Arial", Times, serif;
+        font-size: 14px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        margin: 2%;
     }
 
     .footer {
-       margin:0;
+
+       margin:0;
         width: 100%; /* Espaciado proporcional */
         font-size: 9px; /* Tamaño de fuente */
         text-align: center; /* Centrar el texto */
         line-height: 1.5;          /* Centrar el texto verticalmente */
     }
-}
-
-.content-wrapper {
-    max-width: 1200px;
-    width: 100%;
-    margin: 0;
-    padding: 0 7%;
-    background-color: white;
 }
