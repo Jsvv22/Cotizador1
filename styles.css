@@ -42,8 +42,6 @@ th, td {
     color: white;
     margin-left: 0;
     margin-right: 0;
-    padding: 10px;
-    height: 20px;
     text-align: center;
 }
 
@@ -165,8 +163,7 @@ select option {
 .footer {
     background-color: #000000; /* Fondo oscuro */
     color: white; /* Texto blanco */
-    margin-left: 0;
-    margin-right: 0;
+    margine:0;
     text-align: center; /* Centrar el texto */
     padding: 10px 0; /* Espaciado arriba y abajo */
     position: relative; /* Fijar el pie de página en la parte inferior */
@@ -186,17 +183,23 @@ select option {
         width: 100%;
         margin: 0 auto;
         text-align: center;
+        align-items: center; /* Alinear verticalmente */
+        justify-content: center; /* Centrar horizontalmente el contenido restante */
+        gap: 10px;
     }
     
     .header-poliza .logo {
         width: 100px; /* Tamaño más adecuado para móviles */
         heigth: auto;
-        margin-bottom: 10px;
+        margin-bottom: 0px;
         align-self: flex-start; /* Asegura que se alinee a la izquierda */
     }
 
     .header-poliza .header-text {
         font-size: 11px; /* Texto ligeramente más pequeño para móviles */
+        text-align: center; /* Centrar el texto */
+        line-height: 1.5;
+        flex-grow: 1;
     }
 
     .content-wrapper {
