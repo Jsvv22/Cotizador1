@@ -7,6 +7,7 @@
     <title>Cotizador de Póliza RC</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Aquí se agrega el favicon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
     
 <body>
@@ -14,9 +15,10 @@
         <img src="logoprevisora.png" alt="Logo previsora" class="logo">
         <span class="header-text">POLIZA RC PROFESIONALES DE LA SALUD</span>
     </div>
-    <div class=".content-wrapper">
-    <div class=".discleimer-wrapper">
-    <p class=".discleimer">La presente cotización no constituye una oferta comercial. Los términos establecidos
+    <div id="reloj" class="relojstyle"></div>
+    <div class="content-wrapper">
+    <div class="discleimer-wrapper">
+    <p class="discleimer">La presente cotización no constituye una oferta comercial. Los términos establecidos
 serán susceptibles de modificación hasta cuándo LA PREVISORA S.A. compañía de seguros
 determine las características de los riegos a asegurar.
 La presente oferta tiene una validez de 30 días a partir de la fecha. Si tiene alguna duda o inquietud consulte con Seguros Garrido Ltda. 
@@ -29,7 +31,7 @@ La presente oferta tiene una validez de 30 días a partir de la fecha. Si tiene 
         </tr>
         <tr>
             <td id="clase">
-                <select id="Selectclase"><option value="">Selecciones una opción</option>
+                <select id="Selectclase" title="Selector de clase"><option value="">Selecciones una opción</option>
             </select>
             </td>
             <td id="cobertura"></td>
@@ -40,11 +42,16 @@ La presente oferta tiene una validez de 30 días a partir de la fecha. Si tiene 
     <table>
         <tr>
          <td id=stylevalor>   
-    <select id="valor" class= "custom-width"><option value="">Selecciones una opción</option>
+    <select id="valor" class= "custom-width" title="Selector de valor asegurado"><option value="">Selecciones una opción</option>
     </select>
      <!-- Agregar el botón de cotizar -->
-    <div style="text-align: center; margin-top: 20px;">
-        <button class="btn-cotizar" onclick="actualizarCotizacion()">Cotizar</button>
+    <div class="botones">
+        <button class="btn-cotizar" onclick="actualizarCotizacion()"><i class="fa-solid fa-hand-holding-dollar"></i>Cotizar</button>
+        <button class="btn-whatsapp" onclick="abrirWhatsApp()"><i class="fa-brands fa-whatsapp"></i>Comunícate con un asesor</button>
+    </div>
+    <div class="botones">
+        <button class="btn-cotizar" onclick="imprimirPDF()"><i class="fa-solid fa-print"></i>imprimir cotización
+        </button>
     </div>
          </td>
     </tr>
@@ -63,17 +70,33 @@ La presente oferta tiene una validez de 30 días a partir de la fecha. Si tiene 
         </tr>
     </table>
     <div class="header-title">Definiciones y exclusiones</div>
-    <p>
+    <p class="def">
         <strong>1) Cirugía mayor:</strong> Incluye operaciones en o sobre cualquier cavidad corporal, incluyendo, pero no limitándose al cráneo, tórax, abdomen, o pelvis, o cualquier otra operación que, debido a la condición del paciente, o al tiempo, o a las circunstancias de la operación, presente un peligro marcado a la vida. También incluye remoción de cualquier glándula u órgano, remoción de tumores, amputaciones, fracturas de huesos, cirugía plástica y cualquier operación efectuada utilizando anestesia general. Serán también consideradas como cirugía mayor las cesáreas, las anexectomías y las amigdalectomías (tonsilectomías).
         <br><br>
         <strong>2) Cirugía Menor:</strong> Incluye las cirugías no clasificadas como Cirugía Mayor. También incluye: a) Procesos obstétricos no considerados como Cirugía Mayor, b) La asistencia a otros médicos en cirugías a pacientes propios. Biopsia por Punción: Incluye pulmones, hígado, riñones y próstata, pero no incluye médula ósea.
         <br><br>
         <strong>3) Caterización:</strong> No incluye a) Inserción ocasional y por emergencia de catéteres para registrar presión o marcapasos temporales, b) Caterización de la uretra, c) Caterización del cordón umbilical para propósitos de diagnóstico, o para monitorear gases en la sangre de recién nacidos que están recibiendo oxígeno.
     </p>
-<script src="script.js"></script>
+
 </div>
 <footer class="footer">
-    <p>&copy; 2025 Previsora S.A. Compañía de Seguros., Seguros Garrido Ltda. Agencia de seguros Todos los derechos reservados. Desarrollado por Industrias JsVar</p>
+    <p>&copy; 2025 Previsora S.A. Compañía de Seguros., Seguros Garrido Ltda. Agencia de seguros Todos los derechos reservados. Desarrollado por MAPRING S.A.S.</p>
 </footer>
+
+<div id="errorModal" class="modal">
+    <div class="modal-content">
+      <p><strong>Debe seleccionar una clase y un valor</strong></p>
+      <button class="closeModalButton" onclick="cerrarModal()">Aceptar</button>
+    </div>
+    </div>
+    <div id="errorModal2" class="modal">
+      <div class="modal-content">
+        <p><strong>Debe cotizar una poliza primero</strong></p>
+        <button class="closeModalButton" onclick="cerrarModal2()">Aceptar</button>
+      </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </body>
 </html>
