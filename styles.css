@@ -20,17 +20,20 @@ div {
     font-size: 14px;
     overflow-x: hidden;
     overflow-y: auto;
-    margin: 1%;
+    margin-left: 1%;
+    margin-right: 2%;
 }
 
 table {
-    width: 100%;
+    width: 97%;
     border-collapse: collapse;
     margin-top: 10px;
     margin-bottom: 25px;
     border-radius: 10px;
     overflow: hidden;
     table-layout: fixed;
+    margin-left: 1%;
+    margin-right: 2%;
 }
 
 th, td {
@@ -40,10 +43,17 @@ th, td {
     width: 50%;
 }
 
+.relojstyle {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    text-align: left;
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
 .content-wrapper {
     width: 100%;
-    margin: 5%;
-    padding: 7%;
     background-color: white;
 }
 
@@ -74,7 +84,7 @@ th, td {
     width: 100%; /* Asegúrate de que ocupe todo el ancho */
     height: 55px; /* Altura fija para el encabezado */
     border-radius: 0; /* Asegúrate de que no tenga bordes redondeados */
-    background-color: green; /* Puedes cambiar el color de fondo */
+    background-color: rgb(82, 162, 215); /* Puedes cambiar el color de fondo */
     display: flex;
     gap: 10px;
     align-items: center;
@@ -102,7 +112,6 @@ th, td {
 
 /* Estilo para el disclaimer */
 .disclaimer-wrapper {
-    margin-top: 20px; /* Para separar el disclaimer del encabezado */
     width: 100%;
     position: relative;
 }
@@ -111,10 +120,12 @@ th, td {
     font-size: 10px; /* Tamaño pequeño para el texto */
     color: #333; /* Un color suave para que no sea demasiado llamativo */
     text-align: center;
-    padding: 1%;
+    padding: 5%;
     background-color: #f4f4f4; /* Fondo suave para el disclaimer */
     width: 100%; /* Asegura que ocupe todo el ancho */
     box-sizing: border-box; /* Incluye el padding en el cálculo del ancho */
+    margin-top: 1px;
+    margin-bottom: 1px;
 }
 
 select {
@@ -152,9 +163,16 @@ select option {
     text-align: center;        /* Centrar el texto horizontalmente */
 }
 
+.botones {
+    display: flex; /* Utiliza flexbox para centrar verticalmente */
+    gap: 20px; /* Espaciado entre los botones */
+    justify-content: center; /* Centra los botones horizontalmente */
+    margin-top: 20px; /* Espaciado superior */
+}
+
 /* Estilo específico para el botón de cotizar */
 .btn-cotizar {
-    background-color: #28a745; /* Color de fondo verde */
+    background-color: rgb(82, 162, 215); /* Color de fondo verde */
     color: white;              /* Color de texto blanco */
     padding: 10px 20px;        /* Espaciado interno */
     border: none;              /* Sin bordes */
@@ -162,10 +180,38 @@ select option {
     font-size: 16px;           /* Tamaño de fuente */
     cursor: pointer;           /* Cambia el cursor a puntero */
     transition: background-color 0.3s ease; /* Transición suave para cambios de fondo */
+    display: flex; /* Utiliza flexbox para centrar verticalmente */ 
+    gap: 12px; /* Espaciado entre el icono y el texto */
+}
+
+.btn-cotizar i {
+    font-size: 20px; /* Tamaño de fuente más grande para el icono */
 }
 
 /* Cambiar el color de fondo cuando el botón está en hover */
 .btn-cotizar:hover {
+    background-color: #3528a7; /* Color de fondo más oscuro al pasar el cursor */
+}
+
+.btn-whatsapp {
+    background-color: rgb(82, 162, 215); /* Color de fondo verde */
+    color: white;              /* Color de texto blanco */
+    padding: 10px 20px;        /* Espaciado interno */
+    border: none;              /* Sin bordes */
+    border-radius: 12px;       /* Bordes redondeados */
+    font-size: 16px;           /* Tamaño de fuente */
+    cursor: pointer;           /* Cambia el cursor a puntero */
+    transition: background-color 0.3s ease; /* Transición suave para cambios de fondo */
+    display: flex; /* Utiliza flexbox para centrar verticalmente */
+    gap: 12px; /* Espaciado entre el icono y el texto */
+}
+
+.btn-whatsapp i {
+    font-size: 23px; /* Tamaño de fuente más grande para el icono */
+}
+
+/* Cambiar el color de fondo cuando el botón está en hover */
+.btn-whatsapp:hover {
     background-color: #218838; /* Color de fondo más oscuro al pasar el cursor */
 }
 
@@ -184,6 +230,57 @@ select option {
     font-family: Arial, sans-serif; /* Familia de fuente */
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
 }
+
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto;
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+  }
+  
+  .closeModalButton {
+    background-color: #2852a7; /* Color de fondo verde */
+    color: white;              /* Color de texto blanco */
+    padding: 10px 20px;        /* Espaciado interno */
+    border: none;              /* Sin bordes */
+    border-radius: 12px;       /* Bordes redondeados */
+    font-size: 16px;           /* Tamaño de fuente */
+    cursor: pointer;           /* Cambia el cursor a puntero */
+    transition: background-color 0.3s ease; /* Transición suave para cambios de fondo */
+}
+
+.closeModalButton:hover {
+    background-color: #342188; /* Color de fondo más oscuro al pasar el cursor */
+}
+
+  .modal-content {
+    background-color: white; /* Color de fondo */
+    color: black;              /* Color de texto */
+    display: flex; /* Utiliza flexbox para centrar verticalmente */
+    flex-direction: column; /* Asegura que los elementos estén en una columna */
+    align-items: center; /* Centra el contenido verticalmente */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    padding: 10px 20px;        /* Espaciado interno */
+    border: none;              /* Sin bordes */
+    border-radius: 12px;       /* Bordes redondeados */
+    font-size: 16px;           /* Tamaño de fuente */
+    max-width: 500px; 
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; 
+  }
+
+  .def {
+    margin-left: 1%;
+    margin-right: 2%;
+  }
 
 /* Para pantallas pequeñas (móviles) */
 @media screen and (max-width: 1080px) {
@@ -212,13 +309,6 @@ select option {
         flex-grow: 1;
     }
 
-    div {
-        font-family: "Arial", Times, serif;
-        font-size: 14px;
-        overflow-x: hidden;
-        overflow-y: auto;
-        margin: 2%;
-    }
 
     .footer {
 
@@ -227,5 +317,24 @@ select option {
         font-size: 9px; /* Tamaño de fuente */
         text-align: center; /* Centrar el texto */
         line-height: 1.5;          /* Centrar el texto verticalmente */
+    }
+}
+
+@media print {
+    body {
+        width: 210mm; /* Ancho de A4 */
+        height: auto; /* Permitir varias páginas */
+        margin: 10mm; /* Márgenes para evitar cortes */
+        padding: 0;
+    }
+
+    .pagina {
+        page-break-before: auto;
+        page-break-after: always; /* Fuerza un salto de página después de cada sección */
+        page-break-inside: avoid; /* Evita cortar elementos */
+    }
+
+    .no-imprimir, .botones {
+        display: none !important; /* Oculta los elementos innecesarios en la impresión */
     }
 }
