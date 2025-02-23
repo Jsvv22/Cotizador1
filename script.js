@@ -1,6 +1,23 @@
+
 document.addEventListener("DOMContentLoaded", function () {
     cargarDatos();
 });
+
+function actualizarReloj() {
+    const ahora = new Date();
+    const opciones = { day: '2-digit', month: '2-digit', year: 'numeric', hour: '2-digit', minute: '2-digit', hour12: false };
+    const fechaHora = ahora.toLocaleString('es-ES', opciones).replace(',', '');
+    document.getElementById("reloj").textContent = fechaHora;
+}
+
+actualizarReloj(); // Llamado inmediato
+
+// Calcula el tiempo hasta el próximo minuto para sincronizar la actualización
+const segundosRestantes = 60 - new Date().getSeconds();
+setTimeout(() => {
+    actualizarReloj();
+    setInterval(actualizarReloj, 60000); // Actualiza cada minuto
+}, segundosRestantes * 1000);
 
 function limpiarResultados() {
     document.getElementById("prima").innerText = "";
@@ -82,7 +99,7 @@ function actualizarCotizacion() {
     const valorSeleccionado = selectValor.value;
 
     if (!claseSeleccionada || !valorSeleccionado) {
-        console.error("Debe seleccionar una clase y un valor");
+        mostrarErrorModal();
         return;
     }
 
@@ -121,4 +138,46 @@ function actualizarCotizacion() {
             }
         })
         .catch(error => console.error("Error cargando los valores:", error));
+}
+
+function mostrarErrorModal() {
+    var modal = document.getElementById("errorModal");
+    modal.style.display = "block";
+}
+
+function cerrarModal() {
+    var modal = document.getElementById("errorModal");
+    modal.style.display = "none";
+}
+
+function imprimirPDF() {
+    // Ajustar el contenido si es necesario
+    // Por ejemplo, añadir clases específicas para impresión
+    document.body.classList.add('preparar-impresion');
+
+    // Esperar un breve momento para que los estilos se apliquen
+    setTimeout(() => {
+        window.print();
+        // Remover la clase después de imprimir
+        document.body.classList.remove('preparar-impresion');
+    }, 1000);
+}
+
+
+
+function mostrarErrorModal2() {
+    var modal = document.getElementById("errorModal2");
+    modal.style.display = "block";
+}
+
+function cerrarModal2() {
+    var modal = document.getElementById("errorModal2");
+    modal.style.display = "none";
+}
+
+function abrirWhatsApp() {
+    var numero = "+573505423354"; // Reemplaza con el número de teléfono
+    var mensaje = encodeURIComponent("Hola, estoy interesado en adquirir una poliza de RC para profecionales de la salud");
+    var url = `https://wa.me/${numero}?text=${mensaje}`;
+    window.open(url, '_blank');
 }
